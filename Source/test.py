@@ -21,8 +21,7 @@ endpoint_name = endpoint_name + "-" + commit_id + "-" + timestamp
 
 runtime = boto3.client('runtime.sagemaker') 
 
-wget.download("http://www.vision.caltech.edu/Image_Datasets/Caltech256/images/216.tennis-ball/216_0098.jpg", "test.jpg")
-
+wget.download("http://www.vision.caltech.edu/Image_Datasets/Caltech256/images/218.tennis-racket/218_0006.jpg", "test.jpg")
 
 with open("test.jpg", 'rb') as f:
     payload = f.read()
@@ -41,6 +40,7 @@ print ("\n")
 print ("Result: label - " + object_categories[index] + ", probability - " + str(result[index]))
 
 result_prob = np.column_stack((object_categories,result))
+result_prob = sorted(result_prob, key=lambda s :float(s[1]), reverse=True)
 
 print("CATEGORY PROBABILITY")
 
