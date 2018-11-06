@@ -40,11 +40,12 @@ object_categories = ['ak47', 'american-flag', 'backpack', 'baseball-bat', 'baseb
 print ("\n")
 print ("Result: label - " + object_categories[index] + ", probability - " + str(result[index]))
 
-for eachCat in object_categories:
-    print(eachCat)
+result_prob = np.column_stack((object_categories,result))
 
-for eachResult in result:
-    print(eachResult)
+print("CATEGORY PROBABILITY")
+
+for i in range(len(result_prob)):
+	print(result_prob[i][0], result_prob[i][1])
 
 end = time.time()
 seconds = end - start
