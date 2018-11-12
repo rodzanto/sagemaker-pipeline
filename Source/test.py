@@ -5,7 +5,7 @@ import numpy as np
 import sys
 import time
 
-# Prueba con Catalana
+# Prueba con Catalana 
 
 start = time.time()
 
