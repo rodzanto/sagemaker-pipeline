@@ -5,6 +5,8 @@ import numpy as np
 import sys
 import time
 
+# Prueba con Catalana
+
 start = time.time()
 
 endpoint_name = sys.argv[1]
